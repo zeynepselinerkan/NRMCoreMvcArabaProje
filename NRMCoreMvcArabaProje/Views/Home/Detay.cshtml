@@ -1,0 +1,43 @@
+﻿@model NRMCoreMvcArabaProje.Models.Car
+
+@{
+    ViewData["Title"] = "Araç Detayları";
+}
+
+<h1>Detay</h1>
+
+<div>
+  @*  <h4>Car</h4>*@
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+          Araç No
+        </dt>
+        <dd class = "col-sm-10">
+            @Model.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Model.Marka
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Marka)
+        </dd>
+        <dt class = "col-sm-2">
+            @Model.Model
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+        <dt class = "col-sm-2">
+            Fiyat
+        </dt>
+        <dd class = "col-sm-10">
+            @Model.UnitPrice
+        </dd>
+    </dl>
+</div>
+<div>
+@*    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |*@
+    <a href="/home/edit/@Model.Id" class="btn btn-success">Güncelle</a>
+    <a asp-action="Index" class="btn btn-info">Listeye Dön</a>
+</div>
